@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Project Cataract"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/user/Desktop/Coding and shit/Programming-Videos/Player-and-Rings.avi"
+movie_writer/disable_vsync=true
+
 [input]
 
 forward={

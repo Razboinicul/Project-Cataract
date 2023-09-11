@@ -40,4 +40,6 @@ shape = SubResource("CapsuleShape3D_ugx1k")
 transform = Transform3D(1, 0, 0, 0, 0.789695, 0.6135, 0, -0.6135, 0.789695, 0, 1.5838, 1.99037)
 current = true
 
+[node name="Tweens" type="Node" parent="."]
+
 [connection signal="body_entered" from="AreaNormal" to="." method="_on_area_3d_body_entered"]

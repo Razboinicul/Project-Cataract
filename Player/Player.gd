@@ -56,8 +56,15 @@ func _physics_process(delta):
 				velocity.z = move_toward(velocity.z, 0, SPEED)
 				charge_speed = 1
 		else:
-			velocity = -(transform.basis.x*charge_speed)
-			velocity = -(transform.basis.z*charge_speed)
+			var ini_y = null
+			var t1 = create_tween()
+			var t2 = create_tween()
+			var pos1 = -(transform.basis.x*charge_speed)
+			pos1.y = 0
+			var pos2 = -(transform.basis.z*charge_speed)
+			pos2.y = 0
+			t1.tween_property(self, "position", pos1, 10)
+			t2.tween_property(self, "position", pos2, 10)
 		if charge_speed > 1:
 			charge_speed = 1
 	else:
@@ -65,8 +72,8 @@ func _physics_process(delta):
 		$ChargingCS3D.disabled = false
 		$NormalMI3D.visible = false
 		$NormalCS3D.disabled = true
-		if charge_speed <= 500:
-			charge_speed *= 2.5
+		if charge_speed <= 200:
+			charge_speed *= 2
 		
 	move_and_slide()
 

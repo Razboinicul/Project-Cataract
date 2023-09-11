@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb0norow6m442"]
+[gd_scene load_steps=11 format=3 uid="uid://cb0norow6m442"]
 
+[ext_resource type="Script" path="res://Game.gd" id="1_0rta0"]
 [ext_resource type="PackedScene" uid="uid://cyr4k2uldfge6" path="res://Player/Player.tscn" id="1_lygw8"]
+[ext_resource type="PackedScene" uid="uid://bspigyhcbelgf" path="res://Items/Ring.tscn" id="2_8adm0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6sobb"]
 
@@ -24,13 +26,21 @@ size = Vector3(10, 0.5, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ajpr0"]
 size = Vector3(10, 0.5, 10)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3snek"]
+font_size = 48
+font_color = Color(0.482353, 0.462745, 0, 1)
+
 [node name="Game" type="Node3D"]
+script = ExtResource("1_0rta0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pdceb")
 
 [node name="Player" parent="." instance=ExtResource("1_lygw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32837, 0)
+
+[node name="Ring" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.23606, 3.7781)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -40,3 +50,20 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_ajpr0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 175.0
+text = "0"
+label_settings = SubResource("LabelSettings_3snek")
+horizontal_alignment = 1
+vertical_alignment = 1

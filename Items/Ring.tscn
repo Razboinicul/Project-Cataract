@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bspigyhcbelgf"]
+
+[ext_resource type="Script" path="res://Items/Ring.gd" id="1_kn2q3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hsim"]
+albedo_color = Color(0.627451, 0.537255, 0, 1)
+metallic = 0.3
+
+[sub_resource type="TorusMesh" id="TorusMesh_j7kwm"]
+material = SubResource("StandardMaterial3D_7hsim")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fvirq"]
+radius = 1.0
+
+[node name="Ring" type="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0)
+script = ExtResource("1_kn2q3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_j7kwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.406904, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_fvirq")

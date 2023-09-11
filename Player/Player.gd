@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+@export var score = 0
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -53,3 +53,8 @@ func _input(event):
 		if camera_anglev+changev>-50 and camera_anglev+changev<50:
 			camera_anglev+=changev
 			$Camera3D.rotate_x(deg_to_rad(changev))
+
+func _on_area_3d_body_entered(body):
+	if "Ring" in body.name:
+		score += 1
+		body.queue_free()

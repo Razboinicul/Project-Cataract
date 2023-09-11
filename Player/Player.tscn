@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_krm75"]
 [ext_resource type="Material" uid="uid://caotcbyvdabmq" path="res://Player/PlayerMaterial.tres" id="2_fdt5j"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ugx1k"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4y8eb"]
 material = ExtResource("2_fdt5j")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ugx1k"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_c20ba"]
 material = ExtResource("2_fdt5j")
@@ -16,23 +16,19 @@ material = ExtResource("2_fdt5j")
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_krm75")
 
-[node name="Normal" type="CharacterBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Normal"]
-mesh = SubResource("CapsuleMesh_4y8eb")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Normal"]
+[node name="NormalCS3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ugx1k")
 
-[node name="Charging" type="CharacterBody3D" parent="."]
+[node name="NormalMI3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4y8eb")
+
+[node name="ChargingMI3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-visible = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Charging"]
 mesh = SubResource("SphereMesh_c20ba")
+skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Charging"]
+[node name="ChargingCS3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("SphereShape3D_mqar7")
 
 [node name="AreaNormal" type="Area3D" parent="."]

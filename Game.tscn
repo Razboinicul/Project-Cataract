@@ -35,18 +35,37 @@ font_color = Color(0.482353, 0.462745, 0, 1)
 script = ExtResource("1_0rta0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.768284, 0.64011, 0, -0.64011, 0.768284, 0, 10.0818, 13.2707)
+transform = Transform3D(1, 0, 0, 0, 0.768284, 0.64011, 0, -0.64011, 0.768284, 0, 25.6885, 56.1535)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pdceb")
 
 [node name="Player" parent="." instance=ExtResource("1_lygw8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32837, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.37581, 0)
 
 [node name="Ring" parent="." instance=ExtResource("2_8adm0")]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.23606, 3.7781)
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 4.91431, 3.7781)
+
+[node name="Ring2" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 4.91431, 5.6245)
+
+[node name="Ring3" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 4.91431, 7.56688)
+
+[node name="Ring4" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 4.91431, 9.30251)
+
+[node name="Ring5" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 4.91431, 11.3025)
+
+[node name="Ring6" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.751225, 4.91431, 12.3736)
+
+[node name="Ring7" parent="." instance=ExtResource("2_8adm0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -2.08672, 4.91431, 13.354)
 
 [node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_wj3yn")
